@@ -2,7 +2,7 @@ import Arg from './lib/Arg'
 import {post} from './lib/Discord'
 
 export async function notify(): Promise<void> {
-	let webhook = Arg.v('webhook')
+	let webhook = Arg.v('webhook').replace('https://discordapp.com/api/webhooks/', '') //HACK
 	let title = Arg.v('title')
 	let description = Arg.v_null('descr')
 	let status = Arg.v_enum_null('status', ['success', 'error']) as 'success' | 'error'
