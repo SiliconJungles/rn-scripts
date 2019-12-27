@@ -1,6 +1,5 @@
 import Shell from './Shell'
 const request = require('request')
-const fs = require('fs')
 
 type DiscordParams = {
 	webhook: string,
