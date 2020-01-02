@@ -164,14 +164,14 @@ export default class Arg {
 	 */
 	static v_json(key: string): any {
 		let value = this.v(key)
-		let correctJson = value.replace(/(['"])?([a-z0-9A-Z_@]+)(['"])?/g, '"$2"')
+		let correctJson = value.replace(/(['"])?([a-z0-9A-Z_@-]+)(['"])?/g, '"$2"')
 		return JSON.parse(correctJson)
 	}
 
 	static v_json_null(key: string): object | undefined {
 		let value = this.v_null(key)
 		if (value == null) return undefined
-		let correctJson = value.replace(/(['"])?([a-z0-9A-Z_@]+)(['"])?/g, '"$2"')
+		let correctJson = value.replace(/(['"])?([a-z0-9A-Z_@-]+)(['"])?/g, '"$2"')
 		return JSON.parse(correctJson)
 	}
 }
