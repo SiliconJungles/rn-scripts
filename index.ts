@@ -4,7 +4,8 @@ import {build_android} from './src/build_android'
 import {set_ver_name} from './src/set_ver_name'
 import {set_build_num} from './src/set_build_num'
 import {replace_files} from './src/replace_files'
-import {discord} from './src/discord';
+import {discord} from './src/discord'
+import {test} from './src/test';
 
 (async function() {	try {
 
@@ -20,7 +21,7 @@ import {discord} from './src/discord';
 	} else if ('discord' === command) {
 		await discord()
 	} else if ('test' === command) {
-
+		await test()
 	} else {
 		throw Error('IllegalStateException: No command found, should have been validated already')
 	}
